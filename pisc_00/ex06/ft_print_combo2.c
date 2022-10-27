@@ -1,55 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tf_print_combo.c                                   :+:      :+:    :+:   */
+/*   ft_print_combo2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpryce <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 19:06:25 by lpryce            #+#    #+#             */
-/*   Updated: 2022/10/27 12:12:26 by lpryce           ###   ########.fr       */
+/*   Created: 2022/10/27 11:59:49 by lpryce            #+#    #+#             */
+/*   Updated: 2022/10/27 16:36:39 by lpryce           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-void ft_print_combo(void){
+void ft_print_combo2(void){
 
+	int a;
+	int b;
 	int c;
-	int u;
-	int m;
+	int d;
 
+	a = '0';
+	b = '0';
 	c = '0';
-	u = '0';
-	m = '0';
+	d = '0';
 
-
-	while(c <= '7')
+	while(d <= '9')
 	{
-		u = c+1; 
-		while(u <= '8')
+		d = c+1;
+		while(c <= '9')
 		{
-
-			m = u+1;
-
-			while(m <= '9')
-			{ 
-				write(1, &c, 1);
-				write(1, &u, 1);
-				write(1, &m, 1);
-			if(c < '7')
+			c = b+1;
+			while(b <= '9')
 			{
-				write(1, ", ",2);
-			}
+				b = a+1;
+				while(a<='9')
+				{
+					write(1, &d, 1);
+					write(1, &c, 1);
+					write(1, " ", 1);
+					write(1, &b, 1);
+					write(1, &a, 1);
+					write(1, ", ", 2);
 
-				m++;
-				
-
+					a++;
+				}
+				b++;
 			}
-			u++;
+			c++;
 		}
-		c++;
+		d++;
 	}
 }
-
-
+int main(){
+	ft_print_combo2();
+}
