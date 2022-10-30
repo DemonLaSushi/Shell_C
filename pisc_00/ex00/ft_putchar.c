@@ -6,14 +6,13 @@
 /*   By: lpryce <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:09:00 by lpryce            #+#    #+#             */
-/*   Updated: 2022/10/24 14:09:37 by lpryce           ###   ########.fr       */
+/*   Updated: 2022/10/30 15:30:44 by lpryce           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
-write(1, &c, 1);
+	write(1, &c, 1);
 }
-
