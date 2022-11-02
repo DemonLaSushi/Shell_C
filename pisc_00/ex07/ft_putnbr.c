@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tf_print_combo.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpryce <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 19:06:25 by lpryce            #+#    #+#             */
-/*   Updated: 2022/11/02 16:30:55 by lpryce           ###   ########.fr       */
+/*   Created: 2022/11/02 16:42:47 by lpryce            #+#    #+#             */
+/*   Updated: 2022/11/02 16:56:49 by lpryce           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-void	ft_print_comb(void)
+void	ft_putchar(char c)
+{	
+	write (1, &c, 1);
+}
+
+void	ft_putnbr(int nb)
+
 {
-	int	c;
-	int	u;
-	int	m;
-
-	c = '0';
-	while (c <= '7')
+	if (nb == -2147483648)
 	{
-	u = c + 1;
-		while (u <= '8')
-		{
-				m = u + 1;
-			while (m <= '9')
-			{
-				write(1, &c, 1);
-				write(1, &u, 1);
-				write(1, &m, 1);
-				if (c < '7')
-					write(1, ", ", 2);
-				m++;
-			}
-			u++;
-		}
-		c++;
+		write(1, "-2147483648", 11);
+	}
+	else if (nb < 0)
+	{
+		ft_putchar ('-');
+		nb = -nb;
+		ft_putnbr (nb);
+	}
+	else if (nb > 9)
+	{
+		ft_putnbr (nb / 10);
+		ft_putnbr (nb % 10);
+	}
+	else
+	{
+		ft_putchar (nb + '0');
 	}
 }
